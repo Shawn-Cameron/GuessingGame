@@ -8,18 +8,18 @@ Course Code:ICS3UO
 
 
 def space(): 
-  print ("-"*15)# function for separating to make reading easier
+  print ("-"*15) # function for separating to make reading easier
 
-def guessing_game():#Defined as a function to allow replay for variable
+def guessing_game(): 
   name = input("What is your name?: ")
-  start = input("Would you like to play a guessing game " + name+ "(y/n): ")
+  start = input("Would you like to play a guessing game " +name+ "(y/n): ")
 
   runs = 0    #Defined both variables to allow usage
   guess_amount = 0
   while start == "y":
-    runs +=  1 #Every time the program loops to the while 1 will be added
+    runs +=  1 #Increases every round of guesses
     min = 1 #minium value for game should be 1 
-    max = int(input("What do you want your Highest value guessing number to be?"))    #To allow the user to pick their range
+    max = int(input("What do you want your Highest value guessing number to be?")) #To allow the user to pick their range
     import random
     number = random.randint(min,max) #Command to pick a random int. from range
     print("The Mystery number has been stored")
@@ -27,11 +27,11 @@ def guessing_game():#Defined as a function to allow replay for variable
     space()
     guess_right = 0 #Defined for later usage
   
-    for guesses in range(1,11):#Gives the player 10 guesses 
+    for guesses in range(1,11): #Gives the player 10 guesses 
       if guess_right == 0:
         guess = int(input("Guess a number"))
         if guess == number:
-          guess_right +=  1# when the player guess is correct loop stops
+          guess_right +=  1 #when the player guess is correct loop stops
           print("That is Correct")
         elif (max + 1) > guess > number:
           guess_right = 0 
@@ -44,7 +44,7 @@ def guessing_game():#Defined as a function to allow replay for variable
     
     
       elif guess_right == 1:
-        guess_amount += (guesses - 1)#The value for guesses is added to the value of guess_amount after each run 
+        guess_amount += (guesses - 1) #The value for guesses is added to the value of guess_amount after each run 
         print(name,"it took you",guesses - 1,"tries to guess",number,".")
         space()
         start_again = input("Would you like to play again?")
@@ -56,7 +56,7 @@ def guessing_game():#Defined as a function to allow replay for variable
         else:
           print("That is not a valid choice")
       
-    if guesses == 10:#when for-loop runs after the 10th time this runs
+    if guesses == 10: #when for-loop runs after the 10th time this runs
       space()
       print("AWW you are out of guesses the mystery number was ",number)
       start_again = input("Would you like to play again " + name + "?")
@@ -67,10 +67,10 @@ def guessing_game():#Defined as a function to allow replay for variable
         break
 
 
-  if (start != "y") and (runs == 0):#Runs when the user replies no at start
+  if (start != "y") and (runs == 0): #Runs when the user replies no at start
     print("Aww I really wanted to play with you and see you struggle. Good Bye ",name)
   
-  else:#Runs when start returns False
+  else: #Runs when start returns False
     average_guesses = guess_amount / runs 
     space()
     print (name,",your average guesses were",average_guesses,"per run or",guess_amount,"guesses /",runs," runs")
@@ -79,7 +79,7 @@ def guessing_game():#Defined as a function to allow replay for variable
   
   
 
-guessing_game()#Allows program to run
+guessing_game() #Allows program to run
   
   
   
