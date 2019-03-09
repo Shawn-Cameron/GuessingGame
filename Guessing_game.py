@@ -74,13 +74,5 @@ def guessing_game():
     print("Have a nice day")
     space()
   
-  
-
 guessing_game() #Allows program to run
-  
-  
-  
-  
-  
-  
-  
+
