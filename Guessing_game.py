@@ -3,10 +3,7 @@ Name: Shawn Cameron
 Date: Feb.28,2018
 Course Code:ICS3UO
 
-
 """
-
-
 def space(): 
   print ("-"*15) # function for separating to make reading easier
 
